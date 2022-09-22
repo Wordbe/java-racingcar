@@ -26,18 +26,10 @@ public class StringAddCalculator {
     }
 
     private static int sum(String[] numbers) {
-        int sum = 0;
+        Positive result = new Positive(0);
         for (String number : numbers) {
-            int parsedInt = Integer.parseInt(number);
-            validateNegative(parsedInt);
-            sum += parsedInt;
+            result = result.plus(new Positive(number));
         }
-        return sum;
-    }
-
-    private static void validateNegative(int parsedInt) {
-        if (parsedInt < 0) {
-            throw new RuntimeException("음수가 입력되었습니다");
-        }
+        return result.getNumber();
     }
 }
