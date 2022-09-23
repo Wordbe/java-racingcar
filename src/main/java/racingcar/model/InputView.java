@@ -14,14 +14,6 @@ public class InputView {
         this.tryCount = tryCount;
     }
 
-    public int carCount() {
-        return carCount;
-    }
-
-    public int tryCount() {
-        return tryCount;
-    }
-
     public static InputView scan() {
         System.out.println(HOW_MANY_CAR_QUESTION);
         Scanner scanner = new Scanner(System.in);
@@ -30,5 +22,13 @@ public class InputView {
         int tryCount = Integer.parseInt(scanner.nextLine());
 
         return new InputView(carCount, tryCount);
+    }
+
+    public int carCount() {
+        return carCount;
+    }
+
+    public int tryCount() {
+        return tryCount;
     }
 }
